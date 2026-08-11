@@ -10,19 +10,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #12081f;
-    --bg2: #1b0e30;
+    --bg: #0f081a;
+    --bg2: #1f1036;
     --panel: rgba(255,255,255,0.08);
-    --panel-strong: rgba(255,255,255,0.12);
-    --line: rgba(255,255,255,0.14);
-    --text: #f7f2ff;
-    --muted: rgba(247,242,255,0.72);
+    --panel-strong: rgba(255,255,255,0.14);
+    --line: rgba(255,255,255,0.16);
+    --text: #faf6ff;
+    --muted: rgba(250,246,255,0.74);
     --accent: #ffd84a;
-    --accent2: #7b4cff;
+    --accent2: #8b5cf6;
     --green: #29d46f;
     --danger: #ff6b81;
-    --shadow: 0 20px 60px rgba(0,0,0,0.35);
-    --radius: 24px;
+    --shadow: 0 24px 80px rgba(0,0,0,0.42);
+    --radius: 28px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,9 +30,9 @@
   body {
     font-family: "Nunito", sans-serif;
     background:
-      radial-gradient(circle at top left, rgba(123,76,255,0.22), transparent 28%),
-      radial-gradient(circle at top right, rgba(255,216,74,0.12), transparent 22%),
-      linear-gradient(180deg, var(--bg) 0%, #0c0615 100%);
+      radial-gradient(circle at top left, rgba(123,76,255,0.22), transparent 30%),
+      radial-gradient(circle at top right, rgba(255,216,74,0.16), transparent 24%),
+      linear-gradient(180deg, var(--bg) 0%, #09050f 100%);
     color: var(--text);
     min-height: 100vh;
     overflow-x: hidden;
@@ -45,9 +45,9 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    backdrop-filter: blur(18px);
-    background: rgba(18, 8, 31, 0.72);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(22px);
+    background: rgba(15, 8, 26, 0.78);
+    border-bottom: 1px solid rgba(255,255,255,0.10);
   }
 
   .topbar-inner, .page {
@@ -79,7 +79,7 @@
     display: grid;
     place-items: center;
     font-weight: 900;
-    box-shadow: 0 10px 30px rgba(255,216,74,0.25);
+    box-shadow: 0 14px 34px rgba(255,216,74,0.28);
   }
 
   .brand-title {
@@ -119,15 +119,15 @@
 
   .hero {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 28px;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: 24px;
     padding: 30px 0 18px;
     align-items: stretch;
   }
 
   .hero-copy, .hero-card, .section-card, .cart-card, .product-card {
     border: 1px solid var(--line);
-    background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
     box-shadow: var(--shadow);
     border-radius: var(--radius);
   }
@@ -135,18 +135,21 @@
   .hero-copy {
     position: relative;
     overflow: hidden;
-    padding: 36px;
-    min-height: 420px;
+    padding: 44px;
+    min-height: 460px;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(255,216,74,0.10), transparent 24%),
+      linear-gradient(135deg, #5b2b91 0%, #6d379d 42%, #4d247f 100%);
   }
 
   .hero-copy::after {
     content: "";
     position: absolute;
     inset: auto -60px -80px auto;
-    width: 300px;
-    height: 300px;
+    width: 340px;
+    height: 340px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,216,74,0.24), transparent 70%);
+    background: radial-gradient(circle, rgba(255,216,74,0.24), transparent 68%);
     pointer-events: none;
   }
 
@@ -156,9 +159,9 @@
     gap: 10px;
     padding: 8px 14px;
     border-radius: 999px;
-    background: rgba(255,216,74,0.12);
+    background: rgba(255,216,74,0.14);
     border: 1px solid rgba(255,216,74,0.16);
-    color: var(--accent);
+    color: #fff2a9;
     font-size: 0.82rem;
     font-weight: 800;
     letter-spacing: 0.06em;
@@ -168,15 +171,15 @@
   h1, h2, h3 { font-family: "Playfair Display", serif; }
 
   h1 {
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    line-height: 0.95;
-    margin: 18px 0 18px;
+    font-size: clamp(3.2rem, 6.4vw, 5.9rem);
+    line-height: 0.88;
+    margin: 18px 0 16px;
   }
 
   .hero-copy p {
     max-width: 60ch;
     color: var(--muted);
-    font-size: 1.08rem;
+    font-size: 1.05rem;
     line-height: 1.7;
   }
 
@@ -198,14 +201,15 @@
     padding: 14px 20px;
     border-radius: 999px;
     font-weight: 800;
-    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   }
 
   .btn:hover { transform: translateY(-2px); }
 
   .btn-primary {
-    background: linear-gradient(135deg, var(--accent) 0%, #ffb84d 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, #ffdb59 45%, #f6c844 100%);
     color: #1d102d;
+    box-shadow: 0 18px 45px rgba(255,216,74,0.24);
   }
 
   .btn-secondary {
@@ -218,14 +222,14 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 14px;
-    margin-top: 28px;
+    margin-top: 32px;
   }
 
   .stat {
-    padding: 16px;
-    border-radius: 18px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
+    padding: 18px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.10);
   }
 
   .stat strong {
@@ -235,14 +239,17 @@
   }
 
   .hero-card {
-    padding: 24px;
+    padding: 22px;
     display: grid;
     gap: 14px;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(255,216,74,0.10), transparent 20%),
+      linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.05));
   }
 
   .hero-card .banner {
-    min-height: 250px;
-    border-radius: 20px;
+    min-height: 290px;
+    border-radius: 24px;
     overflow: hidden;
     background:
       linear-gradient(180deg, rgba(17,8,33,0.1), rgba(17,8,33,0.25)),
@@ -259,8 +266,8 @@
     flex: 1 1 130px;
     padding: 14px;
     border-radius: 18px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
   }
 
   .mini-box span {
@@ -269,7 +276,7 @@
   }
 
   .section {
-    padding: 20px 0 0;
+    padding: 24px 0 0;
   }
 
   .section-head {
@@ -289,12 +296,12 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin: 18px 0 20px;
+    margin: 18px 0 22px;
   }
 
   .filter-btn {
     border: 1px solid var(--line);
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.06);
     color: var(--text);
     padding: 10px 16px;
     border-radius: 999px;
@@ -306,23 +313,31 @@
     background: rgba(255,216,74,0.14);
     border-color: rgba(255,216,74,0.3);
     color: var(--accent);
+    box-shadow: 0 10px 24px rgba(255,216,74,0.12);
   }
 
   .layout {
     display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 24px;
+    grid-template-columns: 1fr 360px;
+    gap: 22px;
     align-items: start;
   }
 
   .grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    gap: 20px;
   }
 
   .product-card {
     overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,216,74,0.28);
+    background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
   }
 
   .product-img {
@@ -332,7 +347,7 @@
   }
 
   .product-body {
-    padding: 18px;
+    padding: 20px;
   }
 
   .tag-row {
@@ -346,7 +361,7 @@
     font-size: 0.78rem;
     color: var(--accent);
     border: 1px solid rgba(255,216,74,0.18);
-    background: rgba(255,216,74,0.08);
+    background: rgba(255,216,74,0.10);
     padding: 6px 10px;
     border-radius: 999px;
     font-weight: 800;
@@ -359,9 +374,9 @@
 
   .product-body p {
     color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 14px;
-    min-height: 52px;
+    line-height: 1.65;
+    margin-bottom: 16px;
+    min-height: 58px;
   }
 
   .price-row {
@@ -387,7 +402,7 @@
     height: 44px;
     border-radius: 50%;
     border: 1px solid var(--line);
-    background: rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.07);
     color: var(--text);
     cursor: pointer;
     display: inline-grid;
@@ -397,7 +412,7 @@
   .cart-card {
     position: sticky;
     top: 96px;
-    padding: 18px;
+    padding: 20px;
   }
 
   .cart-head {
@@ -425,7 +440,7 @@
     padding: 12px;
     border-radius: 18px;
     border: 1px solid rgba(255,255,255,0.08);
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.06);
   }
 
   .cart-thumb {
@@ -503,7 +518,7 @@
     padding: 12px 14px;
     border-radius: 14px;
     border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.07);
     color: var(--text);
     outline: none;
   }
@@ -516,7 +531,7 @@
 
   .section-card {
     margin-top: 24px;
-    padding: 22px;
+    padding: 24px;
   }
 
   .benefits {
@@ -527,9 +542,9 @@
 
   .benefit {
     padding: 18px;
-    border-radius: 18px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.09);
   }
 
   .benefit strong {
@@ -538,7 +553,7 @@
   }
 
   .footer {
-    padding: 34px 0 50px;
+    padding: 36px 0 54px;
     color: var(--muted);
     text-align: center;
   }
@@ -607,17 +622,17 @@
   <main class="page" id="home">
     <section class="hero">
       <div class="hero-copy">
-        <span class="eyebrow">Novo ecommerce oficial</span>
-        <h1>Loja online para vender acai, combos e sobremesas</h1>
-        <p>Baseado no projeto Tigela Cheia, montei uma loja com visual premium, catalogo de produtos, carrinho lateral e checkout rapido por WhatsApp. Perfeito para uma operacao simples e funcional.</p>
+        <span class="eyebrow">Aberto todos os dias - 12h as 22h</span>
+        <h1>O acai mais <em>cremoso</em> de Osasco</h1>
+        <p>Self-service para montar do seu jeito, area kids para as criancas se divertirem e delivery pelo WhatsApp, iFood e Keeta.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#products">Ver produtos</a>
-          <a class="btn btn-secondary" href="#checkout">Ir ao checkout</a>
+          <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=5511947802666&text=Ol%C3%A1! Quero pedir um acai na Tigela Cheia." target="_blank" rel="noreferrer">Peça no WhatsApp</a>
+          <a class="btn btn-secondary" href="#checkout">Ver delivery</a>
         </div>
         <div class="stats">
-          <div class="stat"><strong>24h</strong><span class="small">recebimento de pedidos</span></div>
-          <div class="stat"><strong>8</strong><span class="small">produtos em destaque</span></div>
-          <div class="stat"><strong>1 clique</strong><span class="small">para enviar no WhatsApp</span></div>
+          <div class="stat"><strong>Self-service</strong><span class="small">monte do seu jeito</span></div>
+          <div class="stat"><strong>Area kids</strong><span class="small">mais conforto para a familia</span></div>
+          <div class="stat"><strong>Delivery</strong><span class="small">WhatsApp, iFood e Keeta</span></div>
         </div>
       </div>
       <div class="hero-card">
